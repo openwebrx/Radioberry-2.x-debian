@@ -1,0 +1,28 @@
+Source: radioberry
+Maintainer: Jakob Ketterl <jakob.ketterl@gmx.de>
+Section: hamradio
+Priority: optional
+Rules-Requires-Root: no
+Standards-Version: 4.2.0
+Build-Depends: debhelper (>= 11), cmake, libsoapysdr-dev
+Homepage: https://github.com/pa3gsb/Radioberry-2.x
+Vcs-Browser: https://github.com/pa3gsb/Radioberry-2.x
+Vcs-Git: https://github.com/pa3gsb/Radioberry-2.x.git
+
+Package: soapysdr0.8-module-radioberry
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Ham Radio hat for Raspberry PI
+ The radioberry is actual a radio card (raspberry pi hat), which can be plugged
+ into a raspberry pi, forming a Software Defined Radio (SDR).
+
+Package: soapysdr-module-radioberry
+Architecture: all
+Depends: soapysdr0.8-module-radioberry, ${misc:Depends}
+Description: Ham Radio hat for Raspberry PI
+ The radioberry is actual a radio card (raspberry pi hat), which can be plugged
+ into a raspberry pi, forming a Software Defined Radio (SDR).
+ .
+ This is an empty dependency package that pulls in the FCDPP module
+ for the default version of libsoapysdr.
