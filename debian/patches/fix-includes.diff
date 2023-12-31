@@ -1,0 +1,16 @@
+Description: Fixes a missing include that newer compilers would complain about
+Author: Jakob Ketterl <jakob.ketterl@gmx.de>
+
+* This fixes a compilation error on newer versions of gcc. First encountered
+  on Ubuntu Mantic Minotaur.
+
+--- a/SBC/rpi-4/SoapyRadioberrySDR/i2c.h
++++ b/SBC/rpi-4/SoapyRadioberrySDR/i2c.h
+@@ -31,6 +31,7 @@
+ #include <linux/i2c.h>
+ #include <linux/i2c-dev.h>
+ #include <stdexcept>
++#include <cstdint>
+ 
+ namespace rpihw { // Begin main namespace
+ 	
